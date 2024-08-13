@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Film House: Book a Movie Now</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Concert+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 16px;
+      }
+      .abril-fatface-regular {
+        font-family: "Abril Fatface", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .concert-one-regular {
+        font-family: "Concert One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      /* <uniquifier>: Use a unique and descriptive class name
+      // <weight>: Use a value from 100 to 700 */
+
+      .josefin-sans-font {
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      .container {
+        width: 100%;
+        background-color: black;
+      }
+      nav {
+        background-color: black;
+        display: inline;
+        /* position: fixed; */
+      }
+      nav div {
+        display: inline-block;
+        /* padding: 12px 16px; */
+      }
+      .right {
+        float: right;
+        margin-right: 12px;
+      }
+      div a {
+        display: inline-block;
+        padding: 12px 16px;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      div a:hover {
+        background-color: gray;
+      }
+      .brands {
+        margin-right: 300px;
+      }
+      .brands:hover {
+        background-color: transparent;
+      }
+      .film {
+        /* background-image: url(images/hero-gradient\\(1\).webp); */
+        background: linear-gradient(0deg,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.8)), url(images/film1.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        padding-top: 100px;
+      }
+      .content {
+        position: relative;
+        bottom: -52%;
+        color: white;
+        margin-left: 24px;
+      }
+      .content span {
+        margin: 12px;
+      }
+      .content span::after {
+        content: " ⭐";
+      }
+      .content h1 {
+        font-size: 2.6rem;
+        margin-top: 0.4em;
+        margin-bottom: 0.7em;
+      }
+      .content p {
+        line-height: 24px;
+        font-size: 1.2rem;
+      }
+      .content button {
+        padding: 12px 22px;
+        border-radius: 25px;
+        font-weight: 400;
+        font-family: "Abril Fatface", serif;
+        margin-top: 0.9rem;
+      }
+      .content button:hover {
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a class="brands" href="#"><img src="images/filmhous.jfif" height="50px" alt="filmhouse logo" /></a>
+
+      <nav>
+        <div class="link"><a href="#">Food & Drinks</a></div>
+        <div class="link"><a href="#">Booking</a></div>
+        <div class="link">
+          <a class="gradient josefin-sans-font" href="#">Join our club</a>
+        </div>
+      </nav>
+      <nav>
+        <div class="link right"><a href="#">Cart</a></div>
+        <div class="link right"><a href="#">Login</a></div>
+      </nav>
+      <div class="film">
+        <div class="content">
+          <span class="title">Action</span>
+          <span class="title">Thriller</span>
+          <span class="title">Mistery</span>
+          <h1 class="josefin-sans-font title">Bad Boys: Ride or Die</h1>
+          <p class="s">
+            After their late former captain is framed, Lowrey and Burnett try to
+            clear his name, only to <br />end up on the run themselves...
+          </p>
+          <p class=""></p>
+          <button type="button">Buy Ticket</button>
+          <button type="button">Buy Ticket</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

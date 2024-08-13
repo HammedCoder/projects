@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grade</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+      }
+      .container {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        margin: 12px auto;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid greenyellow;
+        padding: 20px;
+      }
+      input {
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px 12px;
+        border-radius: 6px;
+        box-shadow: 0 0 5px 1px lightgrey;
+        border: none;
+        /* border: 2px solid lightblue; */
+      }
+      button {
+        width: 40%;
+        margin: auto;
+        border: none;
+        padding: 7px 10px;
+        background-color: blue;
+        color: white;
+        font-size: 24px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+      input:focus {
+        outline: 2px solid blue;
+        border: none;
+      }
+      h1 {
+        color: brown;
+      }
+
+      @media screen and (max-width:765px) {
+        button {
+            font-size: 12px;
+            width: 30%;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        h1 {
+            width: 60%;
+            font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Student Grade App</h1>
+      <input id="month" type="text" placeholder="Enter your score" />
+      <input
+        type="text"
+        disabled
+        name="output"
+        placeholder="Output"
+        id="output"
+      />
+      <button onclick="getGrade()">Get Grade</button>
+    </div>
+  </body>
+</html>
+<script>
+  const output = document.getElementById("output");
+  function getGrade() {
+    const score = Number(document.getElementById("month").value);
+    console.log(score);
+    // switch (score) {
+    //   case score >= 80:
+    //     console.log(score >= 80);
+    //     output.value = "A";
+    //     break;
+    //   case score >= 70:
+    //     output.value = "B";
+    //     break;
+    //   case score >= 60:
+    //     output.value = "C";
+    //     break;
+    //   case score >= 50:
+    //     output.value = "D";
+    //     break;
+
+    //   default:
+    //     output.value = "F";
+
+    //     break;
+    // }
+    if (score >= 80) {
+        output.value = "A";
+    } else if(score >= 70){
+        output.value = "B";
+
+    } else if(score >= 60){
+        output.value = "C";
+    }
+     else if(score >= 50){
+        output.value = "D";
+    }
+     else if(score >= 40){
+        output.value = "E";
+    }
+    else {
+        output.value = "F";
+    }
+    }
+    console.log(output.value);
+</script>

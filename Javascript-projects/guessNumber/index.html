@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Number Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="color: #6291f8">
+        Guess<span style="color: rgb(9, 190, 190)">Game</span>
+      </h1>
+      <div id="message">
+        <h2></h2>
+      </div>
+
+      <input class="display" id="text-input" type="text" />
+      <div class="button">
+        <button aria-label="0">0</button>
+        <button aria-label="1">1</button>
+        <button aria-label="2">2</button>
+        <button aria-label="3">3</button>
+        <button aria-label="4">4</button>
+        <button aria-label="5">5</button>
+        <button aria-label="6">6</button>
+        <button aria-label="7">7</button>
+        <button aria-label="8">8</button>
+        <button aria-label="9">9</button>
+        <button aria-label="10">10</button>
+        <button onclick="reset()">🔃</button>
+      </div>
+      <button class="btnPlay" onclick="guessNum()">Guess</button>
+      <div class="score">
+        <p style="visibility: hidden">1</p>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <!-- <script>
+    const div = document.querySelector("#message h2");
+    let randomNumber;
+    let canPlay = true
+    let btn = document.querySelectorAll(".button button:not(:last-child)");
+    let score = document.querySelector(".score");
+    let display = document.getElementById("text-input");
+    let num = Number(display.value)
+    btn.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        randomNumber = Math.floor(Math.random() * 11);
+        console.log(randomNumber);
+        const value = button.getAttribute("aria-label");
+        display.value = value;
+        guess(value);
+      });
+    });
+    function guess(value) {
+      score.style.padding='0px'
+      if (value == randomNumber) {
+        div.textContent = "You are right";
+        score.textContent = 5;
+        display.style.color = "blue";
+        display.style.fontWeight = "bolder";
+      } else {
+        div.textContent = `You are wrong, the number is ${randomNumber}`;
+        score.textContent = 1;
+      }
+    }
+    function reset() {
+      display.value = "";
+      display.style.color = "black";
+      display.style.fontWeight = "normal";
+      score.textContent = "";
+      score.style.padding='18px'
+      div.textContent = "Choose a num between 0 - 10";
+    }
+  </script> -->
+</html>

@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lexend","Universal Sans Display", -apple-system, Arial, sans-serif;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+.lexend {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+h1 {
+  font-size: 2.5rem;
+}
+section {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  width: 100%;
+  height: 100vh;
+}
+.model-3 {
+  background-image: url(images/model2.avif);
+  /* height: 85vh; */
+  padding-top: 15vh;
+}
+.model-y {
+  background-image: url(images/modely.avif);
+}
+.model-s {
+  background-image: url(images/models.avif);
+}
+.model-x {
+  background-image: url(images/modelx.avif);
+}
+.model-nomodel {
+  background-image: url(images/nomodel.avif);
+}
+.model-solar-roof {
+  background-image: url(images/solar.avif);
+}
+.model-solar {
+  background-image: url(images/solarroof.avif);
+}
+.powerwall {
+  background-image: url(images/powerwall.avif);
+}
+.accesory {
+  background-image: url(images/accesory.avif);
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, .4);
+  /* flex-wrap: nowrap; */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+p a {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+  /* text-shadow: 1px 0 3px #000; */
+}
+ul {
+  list-style: none;
+  overflow: hidden;
+}
+li {
+  margin-left: 0;
+  float: left;
+}
+li.link a {
+  display: inline-block;
+  padding: 12px;
+  text-decoration: none;
+  color: #000;
+  font-weight: normal;
+}
+.icon {
+  display: flex;
+  align-items: center;
+}
+li.social a {
+  text-decoration: none;
+}
+button.btn {
+  position: relative;
+  bottom: -270px;
+  /* right: 40%; */
+  left: 30%;
+  padding: 8px 12px;
+  cursor: pointer;
+  width: 220px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 900;
+}
+.model-3 button {
+  bottom: -180px;
+}
+button.second {
+  background-color: black;
+  color: white;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+*/ li.social {
+  padding: 5px;
+}
+
+.menu {
+  display: none;
+  /* float: left; */
+  padding: 8px 20px;
+  background-color: rgb(133,189,223);
+  color: white;
+  cursor: pointer;
+  border: none;
+  margin: 7px 0;
+}
+footer {
+  margin: 0 auto;
+}
+
+
+
+footer {
+  background-color: black;
+  color: white;
+  font-size: 0.7rem;
+  padding: 12px 0;
+  line-height: 20px;
+}
+footer ul {
+  text-align: center;
+  margin: 0 auto;
+}
+footer li a {
+  color: white !important;
+}
+.material-symbols-outlined {
+  color: indianred;
+}
+.model-s p {
+  color: white;
+}
+/* .dropdown:hover .dropbtn {
+  background-color: #f1f1f1;
+} */
+
+@media screen and (max-width: 1013.33px) {
+  .menu {
+    display: block;
+  }
+  .link-item {
+    position: absolute;
+    padding: 10px;
+    width: 60%;
+    height: 100vh;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  .side {
+    background-color: #f1f1f1;
+    z-index: 1;
+  }
+  nav:focus-within .link-item {
+    left: 0;
+    transition: all 1s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 840px) {
+}

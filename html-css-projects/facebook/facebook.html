@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      :root {
+        --primary-color: rgb(8, 101, 255);
+        --secondary-color: rgb(66, 183, 42);
+        --gray-color: rgb(212, 214, 217);
+        --bg_body: rgb(240, 242, 245);
+        --border_radius: 7px;
+      }
+      body {
+        background-color: var(--bg_body);
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        margin: 50px 45px 0;
+      }
+      hr {
+        width: 40%;
+        display: inline-block;
+        /* background-color: var(--bg_body); */
+      }
+      .heading {
+        width: 40%;
+        text-align: justify;
+      }
+      .heading p {
+        line-height: 2.2rem;
+        padding-top: 12px;
+        font-size: 24px;
+      }
+      .signup {
+        background-color: #fff;
+        text-align: center;
+        border-radius: 12px;
+        width: 40%;
+      }
+      input {
+        width: 90%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border-radius: var(--border_radius);
+        border: none;
+        font-size: 19px;
+        box-shadow: 0px 0px 3px 1px var(--gray-color);
+      }
+      #signup {
+        width: 90%;
+        padding: 12px 20px;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: var(--border_radius);
+        color: #fff;
+        font-size: large;
+        font-weight: bold;
+        /* margin-bottom: 12px; */
+      }
+      .account {
+        padding: 12px;
+        background-color: var(--secondary-color);
+        border: none;
+        margin-bottom: 12px;
+        width: 40%;
+        border-radius: var(--border_radius);
+        color: #fff;
+        font-weight: 900;
+      }
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="heading">
+        <img src="./images/facebook.png" width="200px" alt="" />
+        <h1>Facebook</h1>
+        <p>Facebook helps you connect and share <br> with the people in your life.</p>
+      </section>
+      <section class="signup">
+        <img width="200px" src="./images/facebook.png" alt="" />
+
+        <form action="" method="post">
+          <p>Log in to Facebook</p><br>
+          <input type="text" placeholder="Email address or phone number" />
+          <input type="password" name="" id="" placeholder="Password" />
+          <button id="signup" type="submit">Log in</button><br /><br />
+          <small><a href="#">Forgotten account</a>?</small><br /><br />
+          <div class="hr">
+            <hr />
+            or
+            <hr />
+          </div>
+          <br />
+          <button class="account" type="submit">Create new account</button>
+        </form>
+      <p><a href="#">Create account or page</a> for Celebrity, brand or business.</p>
+        </section>
+    </div>
+  </body>
+</html>

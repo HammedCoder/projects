@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #141414;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.hero {
+    background: url('images/bg1.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px; /* Offset for fixed header */
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin: 10px 0 20px;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    background-color: #e50914;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 60px 20px;
+    margin-top: 50px;
+}
+
+.content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.movies {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.movie img {
+    width: 200px;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #c22626;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Netflix Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">TV Shows</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">Latest</a></li>
+          <li><a href="#">My List</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Netflix</h1>
+        <p>Watch anywhere. Cancel anytime.</p>
+        <a href="#" class="cta-btn">Watch Now</a>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Popular on Netflix</h2>
+      <div class="movies">
+        <div class="movie">
+          <img src="movie1.jpg" alt="Movie 1" />
+        </div>
+        <div class="movie">
+          <img src="movie2.jpg" alt="Movie 2" />
+        </div>
+        <div class="movie">
+          <img src="movie3.jpg" alt="Movie 3" />
+        </div>
+        <!-- Add more movie divs as needed -->
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Netflix Clone. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
