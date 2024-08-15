@@ -45,6 +45,13 @@ body {
     flex-direction: column;
     width: 30px;
 }
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 700;
+}
 button {
     width: 30px;
     height: 30px;
