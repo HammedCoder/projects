@@ -55,16 +55,16 @@
         color: brown;
       }
 
-      @media screen and (max-width:765px) {
+      @media screen and (max-width: 765px) {
         button {
-            font-size: 12px;
-            width: 30%;
-            border-radius: 5px;
-            padding: 5px;
+          font-size: 12px;
+          width: 30%;
+          border-radius: 5px;
+          padding: 5px;
         }
         h1 {
-            width: 60%;
-            font-size: 24px;
+          width: 60%;
+          font-size: 24px;
         }
       }
     </style>
@@ -89,43 +89,23 @@
   function getGrade() {
     const score = Number(document.getElementById("month").value);
     console.log(score);
-    // switch (score) {
-    //   case score >= 80:
-    //     console.log(score >= 80);
-    //     output.value = "A";
-    //     break;
-    //   case score >= 70:
-    //     output.value = "B";
-    //     break;
-    //   case score >= 60:
-    //     output.value = "C";
-    //     break;
-    //   case score >= 50:
-    //     output.value = "D";
-    //     break;
-
-    //   default:
-    //     output.value = "F";
-
-    //     break;
-    // }
-    if (score >= 80) {
-        output.value = "A";
-    } else if(score >= 70){
-        output.value = "B";
-
-    } else if(score >= 60){
-        output.value = "C";
+    if (score < 0) {
+      alert(`Score cannot be less than 0`);
+    } else if (score > 100) {
+      alert(`Score cannot be be greater than 100`);
+    } else if (score >= 80) {
+      output.value = "Your grade is A";
+    } else if (score >= 70) {
+      output.value = "Your grade is B";
+    } else if (score >= 60) {
+      output.value = "Your grade is C";
+    } else if (score >= 50) {
+      output.value = "Your grade is D";
+    } else if (score >= 40) {
+      output.value = "Your grade is E";
+    } else {
+      output.value = "Your grade is F";
     }
-     else if(score >= 50){
-        output.value = "D";
-    }
-     else if(score >= 40){
-        output.value = "E";
-    }
-    else {
-        output.value = "F";
-    }
-    }
-    console.log(output.value);
+  }
+  console.log(output.value);
 </script>

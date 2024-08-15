@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniCalculator Project</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Mini<span>Calc</span></h1>
+      <div class="calc">
+        <div class="inputs">
+          <input type="text" class="txtInput" id="txt1" />
+          <input type="text" class="txtInput" id="txt2" />
+        </div>
+        <div class="main">
+          <div class="operator">
+            <button type="button" onclick="add()" id="sum">+</button>
+            <button type="button" onclick="minus()" id="minus">-</button>
+            <button type="button" onclick="multiply()" id="multiply">*</button>
+            <button type="button" onclick="divide()" id="divide">/</button>
+          </div>
+          <div class="display">Nan</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
