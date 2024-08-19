@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+        padding-top: 30px;
+      }
+      p {
+        padding: 6px;
+        font-size: 24px;
+      }
+      input {
+        padding: 7px;
+      }
+      button{
+        display: block;
+        width: 100px;
+        padding: 5px 10px;
+        margin: 12px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="first value" id="start" />
+    <input type="text" id="last" placeholder="second value" />
+    <button id="create" type="button" onclick="create()">Create</button>
+    <div id="res"></div>
+  </body>
+  <script>
+    function create() {
+      let input1 = Number(document.getElementById("start").value);
+      let input2 = Number(document.getElementById("last").value);
+      let result = "";
+      if (isNaN(input1) || isNaN(input2) || input1 > input2) {
+        alert("Input a Valid Number; first Value must less than second value");
+        document.getElementById("last").focus();
+      } else if (input2 - input1 > 5) {
+        alert("Second value should at most 5 greater than the first value");
+      } else {
+        for (i = input1; i <= input2; ++i) {
+          for (x = 0; x <= 12; x++) {
+            result = ` ${i} x ${x} = ${i * x}`;
+            result += "<br>";
+            let p = document.createElement("p");
+            p.innerHTML = result;
+
+            document.getElementById("res").appendChild(p);
+            console.log(result);
+          }
+        }
+      }
+    }
+
+    let answer;
+    for (let i = 0; i <= 12; i++) {
+      answer = `20 x ${i} = ${20 * i}}`;
+      console.log(answer);
+      // document.querySelector('.displa').append(answer)
+    }
+
+    let countries = ["Finland", "Sweden", "Denmark", "Norway", "Iceland"];
+
+    let newArr = [];
+    for (let i = countries.length - 1; i >= 0; i--) {
+      newArr.push(countries[i].toUpperCase());
+    }
+    console.log(newArr);
+  </script>
+</html>
