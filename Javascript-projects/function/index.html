@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Conversion</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+      }
+      .title {
+        color: rgb(121, 110, 12);
+      }
+      .title span {
+        color: lawngreen;
+      }
+      .container {
+        height: 100vh;
+        width: 60%;
+        margin: 40px auto;
+        text-align: center;
+      }
+      input {
+        margin-top: 12px;
+        width: 70%;
+        padding: 12px 10px;
+      }
+      #convert {
+        /* display: block; */
+        margin: 20px auto;
+        padding: 12px;
+        cursor: pointer;
+        background-color: rgb(7, 148, 158);
+        border: none;
+        color: #fff;
+        font-weight: 800;
+        transition: all 0.3s ease-in;
+      }
+      #convert:hover {
+        background-color: blue;
+        color: yellow;
+      }
+      .set {
+        padding: 12px;
+        color: #fff;
+        background-color: black;
+      }
+      .error {
+        color: red;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Temperature<span class="code"> Conversion</span></h1>
+      <input
+        class="inputText"
+        type="text"
+        placeholder="Enter Temperaure on Farhenheit"
+      />
+      <button id="convert">Convert Temp</button>
+      <p class="error">Error</p>
+      <div class="set">
+        <p class="result"></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let result = document.querySelector(".result");
+    let inputText = document.querySelector(".inputText");
+    const button = document.getElementById("convert");
+    let error = "";
+    let output = "";
+    console.log(inputText);
+    button.addEventListener("click", function () {
+      if (isNaN(inputText.value)) {
+        error = "Input cannot be text!";
+        console.log(error);
+        document.querySelector(".error").style.visibility='visible'
+        document.querySelector(".error").textContent = error;
+      } else {
+        const value = inputText.value;
+        return convert(value);
+      }
+    });
+    function convert(Temp) {
+      const tempFar = `Temperature in Farhenheit is ${(Temp * 5) / 9 + 32}`;
+      result.textContent = tempFar;
+    }
+    setTimeout(() => {
+      document.querySelector(".error").style.visibility = "hidden";
+    }, 8000);
+  </script>
+</html>

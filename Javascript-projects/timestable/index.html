@@ -30,6 +30,7 @@
     </style>
   </head>
   <body>
+    <h1>Mathematics Multiplication Loops</h1><br>
     <input type="text" placeholder="first value" id="start" />
     <input type="text" id="last" placeholder="second value" />
     <button id="create" type="button" onclick="create()">Create</button>
@@ -47,9 +48,11 @@
         alert("Second value should at most 5 greater than the first value");
       } else {
         for (i = input1; i <= input2; ++i) {
+        const title=  document.createElement('h2').textContent=`Multiplcation Table ${i}`
+        console.log(title);
           for (x = 0; x <= 12; x++) {
-            result = ` ${i} x ${x} = ${i * x}`;
-            result += "<br>";
+            result = ` ${i} x ${x} = ${i * x} <br>`;
+            // result += "<br>";
             let p = document.createElement("p");
             p.innerHTML = result;
 
@@ -60,19 +63,19 @@
       }
     }
 
-    let answer;
-    for (let i = 0; i <= 12; i++) {
-      answer = `20 x ${i} = ${20 * i}}`;
-      console.log(answer);
-      // document.querySelector('.displa').append(answer)
-    }
+    // let answer;
+    // for (let i = 0; i <= 12; i++) {
+    //   answer = `20 x ${i} = ${20 * i}}`;
+    //   console.log(answer);
+    //   // document.querySelector('.displa').append(answer)
+    // }
 
-    let countries = ["Finland", "Sweden", "Denmark", "Norway", "Iceland"];
+    // let countries = ["Finland", "Sweden", "Denmark", "Norway", "Iceland"];
 
-    let newArr = [];
-    for (let i = countries.length - 1; i >= 0; i--) {
-      newArr.push(countries[i].toUpperCase());
-    }
-    console.log(newArr);
+    // let newArr = [];
+    // for (let i = countries.length - 1; i >= 0; i--) {
+    //   newArr.push(countries[i].toUpperCase());
+    // }
+    // console.log(newArr);
   </script>
 </html>

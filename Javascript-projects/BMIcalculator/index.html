@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <label for="weight">Body Weight</label>
+        <input type="text" placeholder="Body Weight" id="weight" />
+      </div>
+      <div>
+        <label for="height">Body Height</label>
+        <input type="text" placeholder="Body Height" id="height" />
+      </div>
+      <button>Calculate</button>
+      <h4></h4>
+    </div>
+  </body>
+  <script>
+    let result;
+    function calculateBMI() {
+      let weight = +document.getElementById("weight").value;
+      let height = +document.getElementById("height").value;
+      if (isNaN(weight) || isNaN(height)) {
+        alert("Value can not be string");
+      } else {
+        let BMI = weight / height ** 2;
+        if (BMI < 18.5) {
+          result = `Patient is Underweight`;
+        } else if (BMI <= 24.9) {
+          result = `Patients's weight Normal`;
+        } else if (BMI <= 29.9) {
+          result = `Patients is Overweight`;
+        } else {
+          result = `Patients is Obese`;
+        }
+      }
+      document.querySelector('h4').textContent = result
+    }
+    document.querySelector('button').addEventListener('click', calculateBMI)
+  </script>
+</html>
