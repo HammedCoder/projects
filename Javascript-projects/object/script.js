@@ -1,5 +1,6 @@
 const users = {
   Alex: {
+    pic:'images/avatar.jpg',
     email: "alex@alex.com",
     skills: ["HTML", "CSS", "JavaScript"],
     age: 20,
@@ -7,6 +8,7 @@ const users = {
     points: 30,
   },
   Asab: {
+    pic:'images/avatar-2.jpg',
     email: "asab@asab.com",
     skills: [
       "HTML",
@@ -23,6 +25,7 @@ const users = {
     points: 50,
   },
   Brook: {
+    pic:'images/avatar-3.jpg',
     email: "daniel@daniel.com",
     skills: ["HTML", "CSS", "JavaScript", "React", "Redux"],
     age: 30,
@@ -30,6 +33,7 @@ const users = {
     points: 50,
   },
   Daniel: {
+    pic:'images/avatar-4.jpg',
     email: "daniel@alex.com",
     skills: ["HTML", "CSS", "JavaScript", "Python"],
     age: 20,
@@ -37,6 +41,7 @@ const users = {
     points: 40,
   },
   John: {
+    pic:'images/avatar.jpg',
     email: "john@john.com",
     skills: ["HTML", "CSS", "JavaScript", "React", "Redux", "Node.js"],
     age: 20,
@@ -51,6 +56,7 @@ const users = {
     points: 40,
   },
   Paul: {
+    pic:'images/avatar.jpg',
     email: "paul@paul.com",
     skills: [
       "HTML",
@@ -74,13 +80,15 @@ for (const key in users) {
     // console.log(element);
   }
 
-  let info = `<div class="info">
+  let info = `
+  <div class="image"><img src="${element.pic}" alt="" class="img-pic"/></div>
+  <div class="info">
 <h1 class="name">Name: ${key}</h1>
 <p class="email">Email: ${element.email}</p>
 <p class="skills">Skills: 
   ${element.skills}
 </p>
-<p>Age: <span>${element.age}</span> | Point: <span>Point: ${element.points}</span></p>
+<p>Age: <span>${element.age}</span> | <span>Point: ${element.points}</span></p>
 <p>Status: ${element.isLoggedIn}</p>
 </div>`;
   document.querySelector(".card").innerHTML = info;
@@ -98,12 +106,21 @@ for (const key in users) {
     const element = users[key];
     if (element.points > 40 && element.isLoggedIn) {
       console.log(
-        `${key} has ${element.points - 40} points greater than 40 and status of ${element.isLoggedIn}`
+        `${key} has ${
+          element.points - 40
+        } points greater than 40 and status of ${element.isLoggedIn}`
       );
     } else {
-        console.log(
-            `${key} has ${40 - element.points} points lower than 40 points and status of ${element.isLoggedIn}`
-          );
+      console.log(
+        `${key} has ${
+          40 - element.points
+        } points lower than 40 points and status of ${element.isLoggedIn}`
+      );
     }
+  }
+}
+for (const key in users) {
+  if (Object.hasOwnProperty.call(users, key)) {
+    console.log((users[key].skills.length));
   }
 }

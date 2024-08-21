@@ -24,7 +24,12 @@ body {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: yellow;
+    /* background-color: yellow; */
+}
+.image .img-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
 }
 .info {
     align-self: center;
@@ -44,4 +49,10 @@ p {
     color: white;
     font-weight: 800;
     width: 100px;
+    cursor: pointer;
+    transition: all .5s ease-in;
+}
+.btn button:hover {
+    background-color: aqua;
+    color: black;
 }
