@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .bg {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 12px;
+      }
+      button {
+        padding: 12px 14px;
+        background-color: green;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        width: 200px;
+        cursor: pointer;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="color">RandomColor Generator App</h1>
+    <div class="bg"></div>
+    <button class="generate">Change Color</button>
+  </body>
+  <script>
+
+    let btn = document.querySelector(".generate");
+    let container = document.querySelector(".bg");
+    function generateColor() {
+      let randNumR = gbColor()
+      let randNumG = gbColor()
+      let randNumB = gbColor()
+      let bgColor = `rgb(${randNumR}, ${randNumG}, ${randNumB})`;
+      container.style.backgroundColor = bgColor;
+      document.querySelector('.color').style.color=bgColor
+    }
+    function gbColor(){
+        return Math.floor(Math.random() * 256);
+    }
+    btn.addEventListener("click", generateColor);
+  </script>
+</html>
