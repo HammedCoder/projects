@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher Oreder function</title>
+  </head>
+  <body>
+    <h1>Higher Order Function</h1>
+  </body>
+
+  <script>
+    // foreEach map reduce filter some every find findIndex
+    const numbers = [1, 2, 3, 4, 5];
+
+    // ForEach
+    numbers.forEach((num, index, array) => {
+      console.log(num);
+    });
+
+    // map
+    let newArr = numbers.map((num, index, array) => {
+      return num;
+    });
+    console.log(newArr);
+
+    // reduce
+    let numArr = numbers.reduce((a, b) => {
+      return a + b;
+    }, 0);
+    let numArrMul = numbers.reduce((a, b) => {
+      return a * b;
+    }, 1);
+
+    console.log(numArr);
+    console.log(numArrMul);
+    // some
+    let someArr = numbers.some((num) => num == 5);
+    console.log(someArr);
+    // every
+    let everyArr = numbers.every((num) => typeof num === "number");
+    console.log(everyArr);
+    // find
+    const countries = ["Finland", "Denmark", "Sweden", "Norway", "Iceland"];
+    let findDenmark = countries.find((name) => name === "Denmark");
+    console.log(findDenmark);
+    const scores = [
+      { name: "Asabeneh", score: 95 },
+      { name: "Lidiya", score: 98 },
+      { name: "Mathias", score: 80 },
+      { name: "Elias", score: 50 },
+      { name: "Martha", score: 85 },
+      { name: "John", score: 100 },
+    ];
+    let findName = scores.find((name) => {
+      return (name.name = "Lidiya");
+    });
+    console.log(findName);
+  </script>
+</html>
