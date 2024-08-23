@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const products = [
+      { product: "banana", price: 3 },
+      { product: "mango", price: 6 },
+      { product: "potato", price: " " },
+      { product: "avocado", price: 8 },
+      { product: "coffee", price: 10 },
+      { product: "tea", price: "" },
+    ];
+    let newProd = products.map((prod) => {
+      console.log(prod.price);
+      return prod.price;
+    });
+    const newPrice = newProd.filter((price) => {
+      typeof price === "number";
+
+      console.log(price);
+      return price;
+    });
+    const sum = newPrice.reduce((acc, cur) => acc + cur, 0);
+    console.log(sum);
+    let total = products
+      .map((prod) => prod.price)
+      .filter((num) => typeof num === "number")
+      .reduce((num, sum) => sum + num, 0);
+  </script>
+</html>

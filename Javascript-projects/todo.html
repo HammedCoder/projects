@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button onclick="addTodo(event)">Add Todo</button>
+    <ul></ul>
+  </body>
+</html>
+<script>
+  let toParent = document.querySelector("ul");
+  let todos = [];
+  function addTodo(e) {
+    console.log(e);
+    let input = e.target.previousElementSibling;
+    // console.log(input);
+    if (input.value.trim()) {
+      const todoObj = { todo: input.value.trim() };
+      todos.push(todoObj);
+      input.value = "";
+      display();
+
+      console.log(toParent);
+    }
+    console.log(todos);
+  }
+
+  function display() {
+    toParent.innerHTML = "";
+    todos.forEach((todo, index) => {
+      toParent.innerHTML += `<li>${todo.todo} <button onclick="editTodo(${index})">Edit</button><button onclick="deleteTodo(${index})">Delete</button></li>`;
+    });
+  }
+  function editTodo(index) {
+    let newValue = prompt("Edit value", `${todos[index].todo}`);
+    console.log(newValue);
+    todos.splice(index, 1, { todo: newValue });
+    display();
+  }
+  function deleteTodo(index) {
+    let newValue = confirm(
+      "Are you sure you want to delete",
+      `${todos[index].todo}`
+    );
+    if (newValue === true) {
+      console.log(newValue);
+      todos.splice(index, 1);
+    } else {
+      alert("nothing was changed");
+    }
+    display();
+  }
+</script>
