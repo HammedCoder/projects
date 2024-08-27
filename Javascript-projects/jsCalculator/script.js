@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll(".button button");
 buttons.forEach((button) => {
   button.getAttribute("data-value");
   button.addEventListener("click", () => {
+    console.log(button);
     const value = button.getAttribute("data-value");
     // console.log(value);
     const display = document.querySelector(".display");

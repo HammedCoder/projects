@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recharge Card</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      .recharg {
+        width: 450px;
+        text-align: center;
+        line-height: 20px;
+        margin: auto;
+        /* background-color: rgb(199, 199, 131); */
+      }
+      input,
+      select {
+        width: 50%;
+        padding: 5px 10px;
+        margin: 2px;
+      }
+      .home {
+        width: 100%;
+      }
+      button {
+        width: fit-content;
+        padding: 5px 10px;
+        background-color: blue;
+        color: white;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="recharg">
+      <div class="home">
+        <select name="provider" id="provider">
+          <option value=""></option>
+          <option value="mtn">MTN</option>
+          <option value="glo">GLO</option>
+          <option value="etisalat">ETISALAT</option>
+          <option value="airtel">AIRTEL</option>
+        </select>
+        <input type="text" id="amount" />
+      </div>
+      <div>
+        <button onclick="generatePin()">Generate Pin</button>
+        <input type="text" id="rechargeInput" />
+    </div>
+    <button onclick="load()">Load</button>  
+    </div>
+  </body>
+  <script>
+    let provider = document.getElementById("provider");
+    let amount = document.getElementById("amount");
+    let rechargeInput = document.getElementById("rechargeInput");
+    let card = "";
+    let pin = "";
+    function generatePin() {
+      pin = "";
+      if (provider.value === "" || amount.value === "") {
+        alert("Choose service provider and amount");
+      } else {
+        for (let i = 0; i < 15; i++) {
+          let randomNumber = Math.floor(Math.random() * 10);
+          pin = pin + randomNumber;
+        }
+        if (provider.value === "mtn") {
+          card = `*555*${pin}#`;
+        } else if (provider.value === "glo") {
+          card = `*123*${pin}#`;
+        } else if (provider.value === "airtel") {
+          card = `*127*${pin}#`;
+        } else {
+          card = `*978*${pin}#`;
+        }
+
+        rechargeInput.value = card;
+      }
+    }
+    function load(pin) {
+      if (rechargeInput.value === "") {
+        alert("Generate card pin first");
+      } else {
+        setTimeout(() => {
+          alert(
+            `Your recharge of ${amount.value} for ${provider.value} is successfully`
+          );
+          rechargeInput.value = "";
+        }, 2000);
+      }
+    }
+    // function show() {
+    //   if (e.target.value === "") {
+    //     console.log('empty');
+    //   }
+    // }
+  </script>
+</html>
