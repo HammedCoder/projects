@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="login">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="loginForm(event)">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" required />
+          <label for="loginPassword">Password</label>
+          <div class="p1">
+            <input type="password" id="loginPassword" required /><button type="button"
+              id="toggle"
+              onclick="showPass(event)"
+            >
+              Show
+            </button>
+          </div>
+         
+          <button type="submit">Login</button>
+          <small style="margin: 10px 0; display: inline-block;">Don't have an account <a href="index.html">Sign up</a> </small>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script src="app.js"></script>
+</html>

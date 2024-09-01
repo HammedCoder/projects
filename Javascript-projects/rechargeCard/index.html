@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recharge Card</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       .recharg {
         width: 450px;
         text-align: center;
@@ -33,71 +33,127 @@
         color: white;
         border: 0;
       }
+      table {
+        width: 500px;
+      }
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+      }
+      tr:nth-child(2n) {
+        background-color: lightgray;
+        color: blue;
+      }
     </style>
   </head>
   <body>
     <div class="recharg">
       <div class="home">
         <select name="provider" id="provider">
-          <option value=""></option>
+          <option value="">Select a service provider</option>
           <option value="mtn">MTN</option>
           <option value="glo">GLO</option>
           <option value="etisalat">ETISALAT</option>
           <option value="airtel">AIRTEL</option>
         </select>
-        <input type="text" id="amount" />
+        <select name="provider" id="amount">
+          <option value="">Select an amount</option>
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="500">500</option>
+          <option value="1000">1000</option>
+        </select>
+        <p id="thePin"></p>
       </div>
       <div>
         <button onclick="generatePin()">Generate Pin</button>
         <input type="text" id="rechargeInput" />
+      </div>
+      <button onclick="loadCard()">Load</button>
     </div>
-    <button onclick="load()">Load</button>  
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Pin</th>
+          <th>provider</th>
+          <th>Amount</th>
+          <th>Used</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
   </body>
   <script>
-    let provider = document.getElementById("provider");
-    let amount = document.getElementById("amount");
-    let rechargeInput = document.getElementById("rechargeInput");
-    let card = "";
-    let pin = "";
+    let rechargeCards =
+      JSON.parse(localStorage.getItem("rechargeCards1")) || [];
+
     function generatePin() {
-      pin = "";
       if (provider.value === "" || amount.value === "") {
         alert("Choose service provider and amount");
-      } else {
-        for (let i = 0; i < 15; i++) {
-          let randomNumber = Math.floor(Math.random() * 10);
-          pin = pin + randomNumber;
-        }
-        if (provider.value === "mtn") {
-          card = `*555*${pin}#`;
-        } else if (provider.value === "glo") {
-          card = `*123*${pin}#`;
-        } else if (provider.value === "airtel") {
-          card = `*127*${pin}#`;
-        } else {
-          card = `*978*${pin}#`;
-        }
+        return;
+      }
+      pin = "";
+      for (let i = 0; i < 15; i++) {
+        let randomNumber = Math.floor(Math.random() * 10);
+        pin = pin + randomNumber;
+      }
+      thePin.innerHTML = pin;
 
-        rechargeInput.value = card;
-      }
+      let cardObj = {
+        pin: pin,
+        provider: provider.value,
+        amount: amount.value,
+        isUsed: false,
+      };
+      rechargeCards.push(cardObj);
+      localStorage.setItem("rechargeCard1", JSON.stringify(rechargeCards));
+      display();
     }
-    function load(pin) {
-      if (rechargeInput.value === "") {
-        alert("Generate card pin first");
-      } else {
-        setTimeout(() => {
+    function display() {
+      tbody.innerHTML = "";
+      rechargeCards.forEach((cardObj, i, arr) => {
+        tbody.innerHTML += `
+        <tr>
+          <td>${i + 1}</td>  
+          <td>${cardObj.pin}</td>  
+            <td>${cardObj.provider}</td>  
+          <td>${cardObj.amount}</td>  
+          <td>${cardObj.isUsed}</td>  
+        </tr>
+        `;
+      });
+    }
+    display();
+    function loadCard() {
+      if (rechargeInput.value.trim()) {
+        let cardValue = rechargeInput.value;
+        console.log(cardValue);
+        let cardPin = cardValue.slice(5, 20);
+
+        let CardToBeFound = rechargeCards.find((cardObj) => {
+          return cardObj.pin === cardPin;
+        });
+        if (!CardToBeFound) {
+          alert("invalid card pin");
+        } else if (CardToBeFound && CardToBeFound.isUsed === true) {
+          alert("This card has already been used");
+        } else if (cardValue === `*311*${CardToBeFound.pin}#`) {
+          CardToBeFound.isUsed = true;
+          localStorage.setItem("rechargeCard1", JSON.stringify(rechargeCards));
+          display();
           alert(
-            `Your recharge of ${amount.value} for ${provider.value} is successfully`
+            `You have successfully recharged ${CardToBeFound.amount} of ${CardToBeFound.provider}`
           );
-          rechargeInput.value = "";
-        }, 2000);
+        } else {
+          alert("Invalid format");
+        }
+      } else {
+        alert("Input a value");
       }
     }
-    // function show() {
-    //   if (e.target.value === "") {
-    //     console.log('empty');
-    //   }
-    // }
   </script>
 </html>

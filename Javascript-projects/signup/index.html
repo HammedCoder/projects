@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="signup">
+        <h2>Signup</h2>
+        <form id="signupForm" onsubmit="signUp(event)">
+          <label for="signupUsername">Username</label>
+          <input type="text" id="signupUsername" required />
+          <label for="signupPassword">Password</label>
+          <div class="p1">
+            <input type="password" id="signupPassword" required /><button type="button"
+              id="toggle"
+              onclick="showPass(event)"
+            >
+              Show
+            </button>
+          </div>
+          <label for="signupPassword2">Re-enter Password</label>
+
+          <div class="p1">
+            <input type="password" id="signupPassword2" required /><button type="button"
+              id="toggle"
+              onclick="showPass(event)"
+            >
+              Show
+            </button>
+          </div>
+          <button type="submit">Signup</button>
+          <!-- <p class="remember">
+            <input type="checkbox" name="remember" id="" />Remember me
+          </p> -->
+          <small style="margin: 10px 0; display: inline-block"
+            >Already have an account <a href="login.html">Login</a>
+          </small>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
